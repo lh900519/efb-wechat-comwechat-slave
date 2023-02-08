@@ -3,12 +3,12 @@ services:
     wechatpchook:
         container_name: comwechat
         environment:
-          - VNCPASS=<YOURR_PASSWORD>
-          - COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.1.0-pre/3.7.0.30-0.1.0-pre.zip
+            - VNCPASS=<YOURR_PASSWORD>
+            - COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.1.1-pre/3.7.0.30-0.1.1-pre.zip
         ipc: host
         volumes:
-          - "/data/ComWeChatRobot/WeChat Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
-          - "/data/ComWeChatRobot/Application Data/:/home/user/.wine/drive_c/users/user/Application Data/"
+          - "./data/ComWeChatRobot/WeChat Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
+          - "./data/ComWeChatRobot/Application Data/:/home/user/.wine/drive_c/users/user/Application Data/"
           - "/etc/localtime:/etc/localtime"
         privileged: true
         restart: always
@@ -18,12 +18,12 @@ services:
         container_name: comwechat-slave
         ipc: host
         volumes:
-          - "/data/ehforwarderbot/blueset.telegram:/root/.ehforwarderbot/profiles/default/blueset.telegram"
-          - "/data/ehforwarderbot/honus.comwechat:/root/.ehforwarderbot/profiles/default/honus.comwechat"
-          - "/data/ehforwarderbot/QQ_War.keyword_reply:/root/.ehforwarderbot/profiles/default/QQ_War.keyword_reply"
-          - "/data/ehforwarderbot/QQ_War.message_merge:/root/.ehforwarderbot/profiles/default/QQ_War.message_merge"
-          - "/data/ComWeChatRobot/WeChat\ Files:/root/wechat/files"
+          - "./data/config/blueset.telegram:/root/.ehforwarderbot/profiles/default/blueset.telegram"
+          - "./data/config/tedrolin.wechatPc:/root/.ehforwarderbot/profiles/default/tedrolin.wechatPc"
+          - "./data/config/QQ_War.keyword_reply:/root/.ehforwarderbot/profiles/default/QQ_War.keyword_reply"
+          - "./data/config/QQ_War.message_merge:/root/.ehforwarderbot/profiles/default/QQ_War.message_merge"
+          - "./data/ComWeChatRobot/WeChat\ Files:/root/wechat/files"
         privileged: true
         restart: always
         network_mode: host
-        image: honus/efb-wechat-comwechat-slave:latest
+        image: h900519/efb-wechat-comwechat-slave:tagname
