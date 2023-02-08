@@ -44,6 +44,6 @@ setup(
         "Operating System :: OS Independent"
     ],
     entry_points={
-        'ehforwarderbot.slave': 'honus.comwechat = efb_wechat_comwechat_slave:ComWeChatChannel',
+        'ehforwarderbot.slave': 'tedrolin.wechatPc = efb_wechat_comwechat_slave:ComWeChatChannel',
     }
 )
