@@ -16,7 +16,7 @@ setup(
     description='EFB Slave for WeChat on ComWeChat',
     author='honus',
     author_email="honusmr@gmail.com",
-    url="https://github.com/0honus0/efb-wechat-comwechat-slave",
+    url="https://github.com/lh900519/efb-wechat-comwechat-slave",
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     python_requires='>=3.7',
     keywords=["wechat", ],
