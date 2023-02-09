@@ -32,6 +32,8 @@ ENV PATH /app/venv/bin:$PATH
 
 COPY config-example.yaml /root/.ehforwarderbot/profiles/default/config.yaml
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g' /etc/apk/repositories
+
 RUN set -ex; \
     apk --update upgrade; \
     apk --update add --no-cache tzdata libmagic ffmpeg; \
